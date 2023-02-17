@@ -9,7 +9,6 @@ const topUp = async (req, res) => {
     const validated = jwt.verify(token, "backend-secret");
     const { id } = validated;
     const user = await getUsersById(id);
-    console.log(user);
     const data = {
         id : user.id,
         amount : req.body.amount,

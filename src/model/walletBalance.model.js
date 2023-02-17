@@ -16,7 +16,6 @@ const topUpWallet = async (data) => {
       'INSERT INTO "walletBalance"("id_user", "id_currency", "amount") VALUES($1, $2, $3) RETURNING *';
     const value = [data.id, data.idCurrency, data.amount];
     const topUpBalance = await db.query(sql, value);
-    console.log(topUpBalance);
     return topUpBalance.rows[0];
   } catch (error) {
     console.log(error);

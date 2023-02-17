@@ -1,7 +1,8 @@
 const profile = require('express').Router()
-const getProfileId = require ('../controller/profile.controller')
+const {getProfileId, updateProfile} = require ('../controller/profile.controller')
 
 profile.get('/', getProfileId)
+profile.post('/update', updateProfile)
 
 
 module.exports = profile
